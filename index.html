@@ -3,155 +3,304 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tarn Francois Music</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <title>Tarn Francois — Funky Blues Rock</title>
+
+  <!-- Fonts: Bebas Neue for headings, Montserrat for body -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome for social icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
   <style>
+    /* Reset & base */
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #121212;
-      color: #f0f0f0;
+      font-family: 'Montserrat', sans-serif;
+      background: #111;
+      color: #eee;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
-    .hero {
-      background: url('tarn3.jpg') center/cover no-repeat;
-      height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      position: relative;
+    a {
+      color: #fdd835;
+      text-decoration: none;
+      transition: color 0.3s ease;
     }
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 4rem;
-      color: #f0f0f0;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 1rem 2rem;
-      border-radius: 10px;
-      z-index: 2;
+    a:hover {
+      color: #ffca28;
     }
-    .content {
-      max-width: 900px;
-      margin: 2rem auto;
+
+    /* Container */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
       padding: 0 1rem;
     }
-    .bio {
+
+    /* Hero */
+    .hero {
+      position: relative;
+      height: 90vh;
+      background: linear-gradient(
+          135deg,
+          rgba(253, 216, 53, 0.6),
+          rgba(13, 71, 161, 0.6)
+        ),
+        url('tarn3.jpg') no-repeat center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
+    }
+    .hero h1 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 5vw;
+      max-width: 90%;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+      letter-spacing: 0.1em;
+      line-height: 1.1;
+      margin: 0;
+    }
+    .hero h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1.7vw;
+      margin-top: 0.4rem;
+      color: #ffeb3b;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    /* About */
+    .about {
+      background: #1e1e2f;
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 3rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+    }
+    .about-text {
+      flex: 1 1 400px;
       font-size: 1.2rem;
-      line-height: 1.6;
-      margin-bottom: 2rem;
+      color: #ddd;
+    }
+    .about-text h2 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #fdd835;
+    }
+    .about-img {
+      flex: 0 0 320px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 15px rgba(253, 216, 53, 0.4);
+    }
+    .about-img img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      height: 100%;
+      transition: transform 0.4s ease;
+    }
+    .about-img img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Music section */
+    .music {
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+    .music h2 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      color: #ffca28;
+      text-shadow: 2px 2px 5px #000;
+    }
+    .music-embeds {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
     }
     .music-embeds iframe {
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(255, 203, 40, 0.5);
+      max-width: 400px;
       width: 100%;
-      max-width: 450px;
-      height: 150px;
+      height: 160px;
       border: none;
-      margin-bottom: 1.5rem;
-      border-radius: 8px;
+      transition: box-shadow 0.3s ease;
     }
+    .music-embeds iframe:hover {
+      box-shadow: 0 12px 24px rgba(255, 203, 40, 0.9);
+    }
+
+    /* Gallery */
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-      gap: 1rem;
-      margin-bottom: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.3rem;
+      margin-bottom: 3rem;
     }
     .gallery img {
       width: 100%;
-      border-radius: 8px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 14px;
+      box-shadow: 0 4px 10px rgba(253, 216, 53, 0.6);
       cursor: pointer;
-      transition: transform 0.3s ease;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.7);
+      transition: transform 0.3s ease, filter 0.3s ease;
+      filter: saturate(1);
     }
     .gallery img:hover {
-      transform: scale(1.05);
+      transform: scale(1.07);
+      filter: saturate(1.3) brightness(1.1);
+      box-shadow: 0 8px 18px rgba(253, 216, 53, 0.9);
     }
-    .social-icons {
+
+    /* Social icons */
+    .socials {
       display: flex;
       justify-content: center;
-      gap: 2rem;
-      font-size: 2rem;
-      margin: 2rem 0;
+      gap: 3rem;
+      margin-bottom: 3rem;
     }
-    .social-icons a {
-      color: #f0f0f0;
-      transition: color 0.3s ease;
+    .socials a {
+      background: #fdd835;
+      color: #111;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      box-shadow: 0 4px 12px rgba(253, 216, 53, 0.7);
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
-    .social-icons a:hover {
-      color: #bb2222;
+    .socials a:hover {
+      background: #ffeb3b;
+      transform: scale(1.15);
+      color: #222;
     }
+
+    /* Newsletter */
     .newsletter {
-      background: #1e1e1e;
-      padding: 1.5rem;
-      text-align: center;
-      border-radius: 8px;
+      background: #28283a;
+      padding: 2rem 1.5rem;
+      border-radius: 16px;
       max-width: 450px;
-      margin: 0 auto 3rem auto;
+      margin: 0 auto 4rem auto;
+      text-align: center;
+      box-shadow: 0 6px 14px rgba(253, 216, 53, 0.6);
+    }
+    .newsletter h2 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 2.7rem;
+      margin-bottom: 1rem;
+      color: #fdd835;
+      text-shadow: 1px 1px 3px #222;
+    }
+    .newsletter form {
+      display: flex;
+      gap: 0.7rem;
+      justify-content: center;
+      flex-wrap: wrap;
     }
     .newsletter input[type="email"] {
-      padding: 0.6rem 1rem;
-      font-size: 1rem;
-      border-radius: 30px;
+      flex: 1 1 250px;
+      padding: 0.9rem 1.2rem;
       border: none;
-      margin-right: 0.5rem;
-      width: 60%;
-      max-width: 250px;
+      border-radius: 40px;
+      font-size: 1rem;
+      outline: none;
+      transition: box-shadow 0.3s ease;
+    }
+    .newsletter input[type="email"]:focus {
+      box-shadow: 0 0 8px #fdd835;
     }
     .newsletter button {
-      padding: 0.6rem 1.5rem;
-      font-size: 1rem;
-      border-radius: 30px;
+      background: #fdd835;
       border: none;
-      background-color: #bb2222;
-      color: white;
+      border-radius: 40px;
+      padding: 0.9rem 2.2rem;
+      font-family: 'Bebas Neue', cursive;
+      font-size: 1.3rem;
+      color: #111;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.15s ease;
     }
     .newsletter button:hover {
-      background-color: #d33a3a;
+      background: #ffeb3b;
+      transform: scale(1.05);
     }
+    .newsletter p {
+      margin-top: 1rem;
+      font-style: italic;
+      color: #ddd;
+      font-size: 0.9rem;
+    }
+
+    /* Footer */
     footer {
       text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #888;
+      padding: 1rem 0;
+      font-size: 0.85rem;
+      color: #777;
       border-top: 1px solid #222;
+      font-family: 'Montserrat', sans-serif;
     }
-    @media (max-width: 600px) {
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .about {
+        flex-direction: column;
+        text-align: center;
+      }
+      .about-img {
+        max-width: 80vw;
+        margin: 0 auto;
+      }
       .hero h1 {
-        font-size: 2.5rem;
-        padding: 0.8rem 1.2rem;
+        font-size: 8vw;
       }
-      .newsletter input[type="email"] {
-        width: 100%;
-        margin: 0 0 1rem 0;
+      .hero h2 {
+        font-size: 4vw;
       }
-      .newsletter button {
-        width: 100%;
+      .music-embeds {
+        flex-direction: column;
       }
     }
   </style>
 </head>
+
 <body>
+  <header class="hero" role="img" aria-label="Photo of Tarn Francois performing">
+    <div>
+      <h1>Tarn Francois</h1>
+      <h2>Funky Blues Rock from the South West</h2>
+    </div>
+  </header>
 
-  <section class="hero" role="img" aria-label="Photo of Tarn Francois">
-    <h1>Tarn Francois<br /><small>Blues-soaked Alt-Rock from the South West</small></h1>
-  </section>
-
-  <main class="content">
-    <section class="bio">
-      <h2>About Tarn</h2>
-      <p>
-        Tarn Francois is a young guitarist from the UK with hundreds of gigs under his belt. Having performed in various bands across the country, Tarn is now focused on his debut studio album. His music blends blues, rock, and alternative styles, delivering soulful guitar work and raw energy. From intimate venues to festival stages, Tarn brings a dynamic presence and a deep love for live performance.
-      </p>
-    </section>
-
-    <section class="music-embeds">
-      <h2>Listen</h2>
-      <iframe src="https://bandcamp.com/EmbeddedPlayer/album=0000000000/size=large/bgcol=222222/linkcol=bb2222/artwork=small/transparent=true/" seamless></iframe>
-      <iframe src="https://open.spotify.com/embed/artist/2b8HSFHI80PYgl3Yy2HXWB" allow="encrypted-media" allowfullscreen></iframe>
-    </section>
-
-    <section class="gallery" aria-label="Gallery of Tarn Francois photos">
-      <img src="tarn1.jpg" alt="Tarn Francois performing live" />
-      <img src="tarn2.jpg" alt="Tarn Francois power trio on stage" />
-      <img src="tarn3.jpg" alt="Close up photo of
+  <main class="container">
+    <section class="about" aria-label="About Tarn Francois">
+      <div class="about-text">
+        <h2>About Tarn</h2>
+        <p>
+          Tarn Francois is a young guitarist from the UK with hundreds of gigs under his belt. Having performed
