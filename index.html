@@ -3,141 +3,125 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tarn Francois | Official Website</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <title>Tarn Francois Music</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #f9f7f4;
-      color: #222;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #121212;
+      color: #ffffff;
     }
     header {
-      background: url('unnamed.jpg') no-repeat center center/cover;
-      height: 100vh;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      background-color: #1c1c1c;
       text-align: center;
-      padding: 2rem;
+      padding: 2rem 1rem;
     }
-    header h1 {
-      font-family: 'Playfair Display', serif;
+    header img.hero {
+      width: 100%;
+      max-height: 80vh;
+      object-fit: cover;
+    }
+    h1 {
       font-size: 3rem;
-      margin: 0;
-    }
-    header p {
-      font-size: 1.25rem;
       margin: 1rem 0;
     }
-    .btn {
-      padding: 0.75rem 1.5rem;
-      background: #222;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
+    .section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
     }
-    section {
-      padding: 4rem 2rem;
-      max-width: 900px;
-      margin: 0 auto;
+    .bio {
+      background-color: #1f1f1f;
+      border-radius: 8px;
+      padding: 1.5rem;
     }
-    h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      margin-bottom: 1rem;
+    .music iframe {
+      width: 100%;
+      height: 150px;
+      margin: 1rem 0;
     }
     .gallery {
       display: flex;
-      gap: 1rem;
       flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
     }
     .gallery img {
-      width: 100%;
-      max-width: 300px;
+      width: 300px;
+      height: auto;
       border-radius: 8px;
     }
-    iframe {
-      width: 100%;
-      height: 166px;
-      border: none;
-    }
-    form input[type="email"] {
+    .newsletter input[type="email"] {
       padding: 0.5rem;
-      width: 60%;
-      max-width: 300px;
-    }
-    form button {
-      padding: 0.5rem 1rem;
-      background: #222;
-      color: white;
       border: none;
+      border-radius: 4px;
+      margin-right: 0.5rem;
+      width: 250px;
+    }
+    .newsletter button {
+      padding: 0.5rem 1rem;
+      background-color: #e63946;
+      border: none;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
     }
     footer {
-      background: #222;
-      color: white;
-      text-align: center;
+      background-color: #1c1c1c;
       padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
     }
-    footer a {
-      color: white;
+    .socials a {
+      color: #ffffff;
       margin: 0 0.5rem;
       text-decoration: none;
-    }
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
     }
   </style>
 </head>
 <body>
   <header>
+    <img class="hero" src="unnamed.jpg" alt="Tarn Francois performing" />
     <h1>Tarn Francois</h1>
-    <p>Blues-soaked Alt-Rock from the South West</p>
-    <a href="#music" class="btn">Listen Now</a>
+    <p>Alternative Rock & Blues Guitarist</p>
   </header>
 
-  <section id="about">
-    <h2>About</h2>
-    <p><strong>Tarn Francois</strong> is a young guitarist from the UK with hundreds of gigs under his belt. Having performed in various bands across the country, Tarn is now focused on his debut studio album. His music blends blues, rock, and alternative styles, delivering soulful guitar work and raw energy. From intimate venues to festival stages, Tarn brings a dynamic presence and a deep love for live performance.</p>
+  <section class="section bio">
+    <h2>About Tarn</h2>
+    <p>
+      Tarn Francois is a young guitarist from the UK. Tarn has experience playing hundreds of gigs in various bands, and has recently been working on a brand new studio album. His music draws influence from rock, blues, and alternative genres. From small local venues to larger stages, Tarn delivers passionate, dynamic performances.
+    </p>
   </section>
 
-  <section id="music">
-    <h2>Music</h2>
-    <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=0000000000/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://tarnfrancois.bandcamp.com/">Tarn Francois</a></iframe>
-    <iframe style="margin-top: 1rem;" src="https://open.spotify.com/embed/artist/2b8HSFHI80PYgl3Yy2HXWB" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+  <section class="section music">
+    <h2>Listen</h2>
+    <iframe style="border: 0;" src="https://bandcamp.com/EmbeddedPlayer/album=0000000000/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="https://tarnfrancois.bandcamp.com/">Tarn Francois on Bandcamp</a></iframe>
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/2b8HSFHI80PYgl3Yy2HXWB?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
   </section>
 
-  <section id="gallery">
+  <section class="section gallery">
     <h2>Gallery</h2>
-    <div class="gallery">
-      <img src="unnamed.jpg" alt="Tarn performing live">
-      <img src="TARN_FRANCOIS_POWER_TRIO_22022025-17.jpg" alt="Live band shot">
-      <img src="IMG_0253.JPG" alt="Closeup performance">
-    </div>
+    <img src="unnamed.jpg" alt="Tarn performing" />
+    <img src="TARN_FRANCOIS_POWER_TRIO_22022025-17.jpg" alt="Tarn on stage" />
+    <img src="IMG_0253.JPG" alt="Live show" />
   </section>
 
-  <section id="newsletter">
-    <h2>Newsletter</h2>
-    <p>Get gig dates, new music & more – straight to your inbox</p>
-    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <input type="email" name="email" placeholder="Enter your email" required>
+  <section class="section newsletter">
+    <h2>Stay in the Loop</h2>
+    <form action="#">
+      <input type="email" placeholder="Your email" required />
       <button type="submit">Subscribe</button>
     </form>
   </section>
 
   <footer>
-    <p>© 2025 Tarn Francois</p>
-    <p>
+    <div class="socials">
+      <a href="https://instagram.com/tarn_francois" target="_blank">Instagram</a>
+      <a href="https://www.youtube.com/results?search_query=Tarn+Francois" target="_blank">YouTube</a>
       <a href="https://open.spotify.com/artist/2b8HSFHI80PYgl3Yy2HXWB" target="_blank">Spotify</a>
-      |
-      <a href="https://tarnfrancois.bandcamp.com/" target="_blank">Bandcamp</a>
-      |
-      <a href="mailto:you@example.com">Email</a>
-    </p>
+    </div>
+    <p>&copy; 2025 Tarn Francois. All rights reserved.</p>
   </footer>
 </body>
 </html>
