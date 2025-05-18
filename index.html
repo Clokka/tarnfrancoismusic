@@ -2,85 +2,156 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tarn Francois Music</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-p1CmvyUY+ueeQ9t6NqVYQJOWd4+OZB6Dqfh5z2l7Zom0LP/5N8I8Uzt8h7dmsHfKMu/rprz+eqm5dG+rhTsqwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     body {
       margin: 0;
-      font-family: 'Roboto', sans-serif;
+      font-family: 'Inter', sans-serif;
       background-color: #121212;
       color: #f0f0f0;
     }
     .hero {
-      background: url('IMG_0253.JPG') center/cover no-repeat;
+      background: url('tarn3.jpg') center/cover no-repeat;
       height: 90vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
+      position: relative;
     }
     .hero h1 {
+      font-family: 'Playfair Display', serif;
       font-size: 4rem;
       color: #f0f0f0;
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.7);
       padding: 1rem 2rem;
       border-radius: 10px;
+      z-index: 2;
     }
     .content {
-      padding: 2rem;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
     .bio {
-      max-width: 800px;
-      margin: 0 auto;
       font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+    .music-embeds iframe {
+      width: 100%;
+      max-width: 450px;
+      height: 150px;
+      border: none;
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.7);
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
     }
     .social-icons {
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
+      gap: 2rem;
+      font-size: 2rem;
       margin: 2rem 0;
     }
     .social-icons a {
       color: #f0f0f0;
-      font-size: 2rem;
-      transition: color 0.3s;
+      transition: color 0.3s ease;
     }
     .social-icons a:hover {
-      color: #1db954; /* Spotify green */
+      color: #bb2222;
     }
-    .footer {
+    .newsletter {
+      background: #1e1e1e;
+      padding: 1.5rem;
+      text-align: center;
+      border-radius: 8px;
+      max-width: 450px;
+      margin: 0 auto 3rem auto;
+    }
+    .newsletter input[type="email"] {
+      padding: 0.6rem 1rem;
+      font-size: 1rem;
+      border-radius: 30px;
+      border: none;
+      margin-right: 0.5rem;
+      width: 60%;
+      max-width: 250px;
+    }
+    .newsletter button {
+      padding: 0.6rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 30px;
+      border: none;
+      background-color: #bb2222;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .newsletter button:hover {
+      background-color: #d33a3a;
+    }
+    footer {
       text-align: center;
       padding: 1rem;
       font-size: 0.9rem;
-      border-top: 1px solid #333;
-      margin-top: 2rem;
+      color: #888;
+      border-top: 1px solid #222;
+    }
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2.5rem;
+        padding: 0.8rem 1.2rem;
+      }
+      .newsletter input[type="email"] {
+        width: 100%;
+        margin: 0 0 1rem 0;
+      }
+      .newsletter button {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="hero">
-    <h1>Tarn Francois</h1>
-  </div>
 
-  <div class="content">
-    <div class="bio">
+  <section class="hero" role="img" aria-label="Photo of Tarn Francois">
+    <h1>Tarn Francois<br /><small>Blues-soaked Alt-Rock from the South West</small></h1>
+  </section>
+
+  <main class="content">
+    <section class="bio">
+      <h2>About Tarn</h2>
       <p>
-        Tarn Francois is a young guitarist from the UK. Tarn has experience playing hundreds of gigs in various bands and has recently been working on a brand-new studio album. His music blends genres including rock, blues, and alternative rock. Tarn has performed everywhere from small venues to big stages.
+        Tarn Francois is a young guitarist from the UK with hundreds of gigs under his belt. Having performed in various bands across the country, Tarn is now focused on his debut studio album. His music blends blues, rock, and alternative styles, delivering soulful guitar work and raw energy. From intimate venues to festival stages, Tarn brings a dynamic presence and a deep love for live performance.
       </p>
-    </div>
+    </section>
 
-    <div class="social-icons">
-      <a href="https://www.instagram.com/tarn_francois" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://tarnfrancois.bandcamp.com/" target="_blank" aria-label="Bandcamp"><i class="fab fa-bandcamp"></i></a>
-      <a href="https://www.youtube.com/results?search_query=Tarn+Francois" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-      <a href="https://open.spotify.com/artist/2b8HSFHI80PYgl3Yy2HXWB?si=aCSN0gX3QO-R_wN-EATY6A" target="_blank" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
-    </div>
-  </div>
+    <section class="music-embeds">
+      <h2>Listen</h2>
+      <iframe src="https://bandcamp.com/EmbeddedPlayer/album=0000000000/size=large/bgcol=222222/linkcol=bb2222/artwork=small/transparent=true/" seamless></iframe>
+      <iframe src="https://open.spotify.com/embed/artist/2b8HSFHI80PYgl3Yy2HXWB" allow="encrypted-media" allowfullscreen></iframe>
+    </section>
 
-  <div class="footer">
-    &copy; 2025 Tarn Francois. All rights reserved.
-  </div>
-</body>
-</html>
+    <section class="gallery" aria-label="Gallery of Tarn Francois photos">
+      <img src="tarn1.jpg" alt="Tarn Francois performing live" />
+      <img src="tarn2.jpg" alt="Tarn Francois power trio on stage" />
+      <img src="tarn3.jpg" alt="Close up photo of
