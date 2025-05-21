@@ -27,6 +27,32 @@
       color: #ffca28;
     }
 
+    /* Navigation Bar */
+    nav {
+      position: sticky;
+      top: 0;
+      background: #111;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    }
+    nav a {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #fdd835;
+      padding: 0.25rem 0.5rem;
+      border-bottom: 2px solid transparent;
+    }
+    nav a:hover {
+      border-bottom: 2px solid #ffca28;
+      color: #fff176;
+    }
+
     /* Container */
     .container {
       max-width: 1100px;
@@ -48,6 +74,7 @@
       align-items: center;
       text-align: center;
       color: #fff;
+      margin-top: 0;
     }
     .hero h1 {
       font-family: 'Bebas Neue', cursive;
@@ -145,13 +172,32 @@
       .hero h2 {
         font-size: 4vw;
       }
+      nav {
+        gap: 1.2rem;
+        padding: 1rem;
+      }
+      nav a {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
 
 <body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#store">Store</a>
+    <a href="#music">Music</a>
+    <a href="#shows">Shows</a>
+    <a href="#video">Video</a>
+    <a href="#photos">Photos</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
   <!-- Hero Section -->
-  <header class="hero">
+  <header class="hero" id="home">
     <div>
       <h1>Tarn Francois</h1>
       <h2>Funky Blues Rock from the South West</h2>
@@ -159,8 +205,9 @@
   </header>
 
   <main class="container">
+
     <!-- About Section -->
-    <section class="about">
+    <section class="about" id="about">
       <div class="about-text">
         <h2>About Tarn</h2>
         <p>
