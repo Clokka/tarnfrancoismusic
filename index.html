@@ -1,256 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tarn Francois — Funky Blues Rock</title>
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { ShoppingCart, Search, Heart } from "lucide-react";
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+export default function OlevsFashionStore() {
+  return (
+    <div className="bg-white min-h-screen font-sans">
+      {/* Header */}
+      <header className="sticky top-0 z-50 bg-white shadow-md p-4 flex justify-between items-center border-b">
+        <h1 className="text-2xl font-bold tracking-wide text-gray-800">Olevs Fashion</h1>
+        <div className="flex items-center space-x-4">
+          <Input placeholder="Search watches..." className="w-64" />
+          <Search className="text-gray-600 cursor-pointer" />
+          <Heart className="text-gray-600 cursor-pointer" />
+          <ShoppingCart className="text-gray-600 cursor-pointer" />
+        </div>
+      </header>
 
-  <style>
-    /* Base Reset */
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background-color: #000;
-      color: #eee;
-    }
-    a {
-      color: #fdd835;
-      text-decoration: none;
-      transition: 0.3s ease;
-    }
-    a:hover {
-      color: #ffca28;
-    }
+      {/* Hero Section */}
+      <section className="bg-[url('https://example.com/fashion-hero.jpg')] bg-cover bg-center h-96 flex items-center justify-center text-white text-center">
+        <div className="bg-black/50 p-8 rounded-2xl">
+          <h2 className="text-4xl font-bold mb-4">Luxury Meets Elegance</h2>
+          <p className="text-lg mb-6">Timeless fashion watches for every style.</p>
+          <Button className="bg-white text-black font-semibold px-6 py-2">Shop Now</Button>
+        </div>
+      </section>
 
-    /* Navigation Bar */
-    nav {
-      position: sticky;
-      top: 0;
-      background: #111;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: center;
-      gap: 2.5rem;
-      z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.7);
-    }
-    nav a {
-      font-family: 'Bebas Neue', cursive;
-      font-size: 1.2rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: #fdd835;
-      padding: 0.25rem 0.5rem;
-      border-bottom: 2px solid transparent;
-    }
-    nav a:hover {
-      border-bottom: 2px solid #ffca28;
-      color: #fff176;
-    }
+      {/* Product Grid */}
+      <main className="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          {
+            img: "https://example.com/olevs-watch-1.jpg",
+            title: "OLEVS Luxury Men's Watch",
+            desc: "Stylish automatic timepiece with stainless steel body and luminous display.",
+            price: "$59.99",
+          },
+          {
+            img: "https://example.com/olevs-watch-2.jpg",
+            title: "OLEVS Women's Rose Gold Watch",
+            desc: "Elegant quartz wristwatch in rose gold with slim leather strap.",
+            price: "$49.99",
+          },
+          {
+            img: "https://example.com/olevs-watch-3.jpg",
+            title: "OLEVS Chronograph Sports Watch",
+            desc: "Multifunctional chronograph with waterproof casing and leather band.",
+            price: "$64.99",
+          },
+        ].map((product, index) => (
+          <Card key={index} className="rounded-2xl shadow-md hover:shadow-2xl transition duration-300">
+            <img
+              src={product.img}
+              alt={product.title}
+              className="w-full h-64 object-cover rounded-t-2xl"
+            />
+            <CardContent className="p-4">
+              <h2 className="text-xl font-semibold mb-1 text-gray-800">{product.title}</h2>
+              <p className="text-gray-600 mb-3 text-sm">{product.desc}</p>
+              <div className="flex justify-between items-center">
+                <span className="text-lg font-bold text-black">{product.price}</span>
+                <Button variant="outline">Add to Cart</Button>
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </main>
 
-    /* Container */
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 2rem 1rem;
-    }
-
-    /* Hero */
-    .hero {
-      height: 90vh;
-      background: linear-gradient(
-          135deg,
-          rgba(0, 0, 0, 0.7),
-          rgba(0, 0, 0, 0.6)
-        ),
-        url('tarn3.jpg') no-repeat center/cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: #fff;
-      margin-top: 0;
-    }
-    .hero h1 {
-      font-family: 'Bebas Neue', cursive;
-      font-size: 6vw;
-      letter-spacing: 0.1em;
-      text-shadow: 2px 2px 8px #000;
-    }
-    .hero h2 {
-      font-size: 2vw;
-      color: #ffeb3b;
-      text-shadow: 1px 1px 6px #000;
-      font-weight: 500;
-    }
-
-    /* Banner Image Section */
-    .banner-image img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 12px;
-      margin: 2rem 0;
-      box-shadow: 0 8px 20px rgba(253, 216, 53, 0.6);
-      object-fit: cover;
-    }
-
-    /* About Section */
-    .about {
-      margin: 4rem 0;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 2rem;
-      background: #111;
-      padding: 2rem;
-      border-radius: 1rem;
-    }
-    .about-text {
-      flex: 1;
-      color: #ddd;
-    }
-    .about-text h2 {
-      font-family: 'Bebas Neue', cursive;
-      font-size: 2.5rem;
-      color: #fdd835;
-      margin-bottom: 1rem;
-    }
-    .about-text p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-    }
-    .about-img {
-      flex: 0 0 300px;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 6px 15px rgba(255, 203, 40, 0.3);
-    }
-    .about-img img {
-      width: 100%;
-      display: block;
-      object-fit: cover;
-      height: 100%;
-    }
-
-    /* Social Links */
-    .socials {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin: 3rem 0;
-    }
-    .socials a {
-      background: #fdd835;
-      color: #111;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.8rem;
-      transition: 0.3s ease;
-      box-shadow: 0 4px 12px rgba(253, 216, 53, 0.7);
-    }
-    .socials a:hover {
-      background: #fff176;
-      transform: scale(1.1);
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      font-size: 0.85rem;
-      padding: 2rem 0;
-      color: #666;
-      border-top: 1px solid #222;
-    }
-
-    @media (max-width: 700px) {
-      .about {
-        flex-direction: column;
-        text-align: center;
-      }
-      .hero h1 {
-        font-size: 10vw;
-      }
-      .hero h2 {
-        font-size: 4vw;
-      }
-      nav {
-        gap: 1.2rem;
-        padding: 1rem;
-      }
-      nav a {
-        font-size: 1rem;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- Navigation Bar -->
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#store">Store</a>
-    <a href="#music">Music</a>
-    <a href="#shows">Shows</a>
-    <a href="#video">Video</a>
-    <a href="#photos">Photos</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <!-- Hero Section -->
-  <header class="hero" id="home">
-    <div>
-      <h1>Tarn Francois</h1>
-      <h2>Funky Blues Rock from the South West</h2>
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white text-center p-6 mt-10">
+        <p>&copy; 2025 Olevs Fashion. All rights reserved.</p>
+      </footer>
     </div>
-  </header>
-
-  <!-- Banner Image Section -->
-  <section class="banner-image">
-    <img src="https://i.imgur.com/PQGnFtF.jpeg" alt="Tarn Francois live performance" />
-  </section>
-
-  <main class="container">
-
-    <!-- About Section -->
-    <section class="about" id="about">
-      <div class="about-text">
-        <h2>About Tarn</h2>
-        <p>
-          Tarn Francois is a dynamic young guitarist and songwriter from the UK, known for his bold fusion of classic blues, high-octane funk, and expressive rock. From festivals to street corners, Tarn brings raw energy, groove-heavy solos, and a vintage soul that feels both fresh and timeless. With hundreds of gigs behind him and many more to come, his sound is pure fire – funky, gritty, and unforgettable.
-        </p>
-      </div>
-      <div class="about-img">
-        <img src="tarn3.jpg" alt="Tarn playing guitar" />
-      </div>
-    </section>
-
-    <!-- Social Links -->
-    <section class="socials">
-      <a href="https://www.instagram.com/tarn_francois" target="_blank" aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://www.youtube.com/@TarnFrancois" target="_blank" aria-label="YouTube">
-        <i class="fab fa-youtube"></i>
-      </a>
-    </section>
-
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    &copy; 2025 Tarn Francois. All rights reserved.
-  </footer>
-
-</body>
-</html>
+  );
+}
